@@ -2,7 +2,7 @@ package InterviewQuestions;
 
 import java.util.Scanner;
 
-public class IntQue003 {
+public class LargestOf3Number {
     public static void main(String[] args) {
         //  write the program to find largest among three number
         Scanner sc = new Scanner(System.in);

@@ -2,7 +2,7 @@ package InterviewQuestions;
 
 import java.util.Scanner;
 
-public class IntQue002 {
+public class PositiveNegativeNumber {
     public static void main(String[] args) {
         // write the program to find number is positive,negative or zero
         Scanner sc = new Scanner(System.in);

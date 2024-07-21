@@ -2,7 +2,7 @@ package InterviewQuestions;
 
 import java.util.Scanner;
 
-public class IntQue004 {
+public class VowelChar {
     public static void main(String[] args) {
         // find the character is vowel or not
         Scanner sc = new Scanner(System.in);

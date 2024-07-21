@@ -2,7 +2,7 @@ package InterviewQuestions;
 
 import java.util.Scanner;
 
-public class IntQue001 {
+public class UserDetails {
     public static void main(String[] args) {
         // write program name,age,salary
 
