@@ -1,4 +1,4 @@
-package ex_200724;
+package InterviewQuestions;
 
 import java.util.Scanner;
 
