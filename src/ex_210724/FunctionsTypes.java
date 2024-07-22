@@ -2,17 +2,17 @@ package ex_210724;
 
 public class FunctionsTypes {
     public static void main(String[] args) {
-        // Functions
-        // Block of code which we can reuse.
+        // Functions is the Block of code which we can reuse.
         // 1. Pre-built - Math.max()
         // 2. User created / defined
         // Two component of the functions
         // 1. Define
         // 2. Call the function
-        //  1.Without Parameters and Without Return Type
-        // 2.Without Parameters but With Return Type
-        // 3.With Parameters and Without Return Type
-        // 4. With Parameters and With Return Type
+        /* types of function --->
+          1.Without Parameters and Without Return Type
+         2.Without Parameters but With Return Type
+         3.With Parameters and Without Return Type
+         4. With Parameters and With Return Type*/
 
         function_type1();
 
