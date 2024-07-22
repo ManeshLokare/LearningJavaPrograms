@@ -12,8 +12,12 @@ public class VowelCharMethod1 {
          if (ch== 'a' || ch== 'i'|| ch== 'e' || ch== 'o'||ch== 'u'){
              System.out.println("Its a vowel character");
          }
+         else if (ch== 'A' || ch== 'I'|| ch== 'E' || ch== 'O'||ch== 'U'){
+             System.out.println("Its a vowel character");
+         }
          else {
-             System.out.println("its Consonent ");
+             System.out.println("Its a Consonant");
+
          }
 
 

@@ -2,7 +2,7 @@ package ex_200724;
 
 import java.util.Scanner;
 
-public class SwitchCondition {
+public class SwitchEx001 {
     public static void main(String[] args) {
         // switch statement
         // find which day from 1 to 7
