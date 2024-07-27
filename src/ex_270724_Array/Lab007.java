@@ -9,8 +9,10 @@ public class Lab007 {
         };
         for (int i = 0; i < array_2d.length; i++) {
             for (int j = 0; j < array_2d[i].length; j++) {
-                System.out.println("Array is "+array_2d[i][j]);
+                System.out.print(array_2d[i][j]);
+                System.out.print("\t");
             }
+            System.out.println("");
         }
     }
 }
