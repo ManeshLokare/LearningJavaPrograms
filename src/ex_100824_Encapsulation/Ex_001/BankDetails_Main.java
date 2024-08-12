@@ -1,4 +1,4 @@
-package ex_100824_Encapsulation;
+package ex_100824_Encapsulation.Ex_001;
 
 public class BankDetails_Main {
     public static void main(String[] args) {

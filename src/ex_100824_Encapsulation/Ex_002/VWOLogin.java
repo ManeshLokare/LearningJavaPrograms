@@ -1,4 +1,4 @@
-package ex_100824_Encapsulation;
+package ex_100824_Encapsulation.Ex_002;
 
 public class VWOLogin {
        // Encapsulation -> private,data hiding (getter and setter methods)
