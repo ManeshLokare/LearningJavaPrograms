@@ -1,0 +1,213 @@
+{
+	"info": {
+		"_postman_id": "d9dc1c3e-abc3-4316-b5d9-325299738e86",
+		"name": "Restful Booker Integration",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19916065"
+	},
+	"item": [
+		{
+			"name": "Step1-CreateBooking",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"console.log(\"After running the API\");\r",
+							"\r",
+							"pm.test (\"Verify that status code for the request is 200 Ok\",function(){\r",
+							"   // pm.response.code\r",
+							"   pm.expect(pm.response.code).to.be.equal(200);\r",
+							"   // pm.expect(actual result).to.be.equal(expected result)\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify that booking id not Null\",function(){\r",
+							"    var bookingId=pm.response.json()[\"bookingid\"];\r",
+							"    console.log(\"bookingId:\", bookingId);\r",
+							"    pm.expect(bookingId).to.not.equal(null);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"pm.test(\"Verify that booking person name\",function(){\r",
+							"    var firstname=pm.response.json()[\"booking\"][\"firstname\"];\r",
+							"    var lastname=pm.response.json()[\"booking\"][\"lastname\"];\r",
+							"    console.log(firstname);\r",
+							"    console.log(lastname);\r",
+							"    pm.expect(firstname).to.be.equal(\"Ganesh\");\r",
+							"    pm.expect(lastname).to.be.equal(\"Lokare\")\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"console.log(\"Before running the API\");\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstname\" : \"Ganesh\",\r\n    \"lastname\" : \"Lokare\",\r\n    \"totalprice\" : 111,\r\n    \"depositpaid\" : true,\r\n    \"bookingdates\" : {\r\n        \"checkin\" : \"2018-01-01\",\r\n        \"checkout\" : \"2019-01-01\"\r\n    },\r\n    \"additionalneeds\" : \"Breakfast\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{test_server}}/booking",
+					"host": [
+						"{{test_server}}"
+					],
+					"path": [
+						"booking"
+					]
+				},
+				"description": "Generated from cURL: curl -i https://restful-booker.herokuapp.com/booking/1\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Step2- PartialUpdateBooking",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify that booking person name after update\",function(){\r",
+							"    var firstname=pm.response.json()[\"firstname\"];\r",
+							"    console.log(firstname);\r",
+							"    pm.expect(firstname).to.be.equal(\"Manesh\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46cGFzc3dvcmQxMjM=",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstname\" : \"Manesh\",\r\n    \"lastname\" : \"Black\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{test_server}}/booking/311",
+					"host": [
+						"{{test_server}}"
+					],
+					"path": [
+						"booking",
+						"311"
+					]
+				},
+				"description": "Generated from cURL: curl -i https://restful-booker.herokuapp.com/booking/1\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Step3 - GetBooking After Update Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify that booking person name after update\",function(){\r",
+							"    var firstname=pm.response.json()[\"firstname\"];\r",
+							"    console.log(firstname);\r",
+							"    pm.expect(firstname).to.be.equal(\"Manesh\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{test_server}}/booking/311",
+					"host": [
+						"{{test_server}}"
+					],
+					"path": [
+						"booking",
+						"311"
+					]
+				},
+				"description": "Generated from cURL: curl -i https://restful-booker.herokuapp.com/booking/1\r\n"
+			},
+			"response": []
+		}
+	]
+}
